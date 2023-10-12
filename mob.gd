@@ -1,5 +1,6 @@
 extends KinematicBody
 
+signal squashed
 # Minimum speed of the mob in meters per second.
 export var min_speed = 10
 # Maximum speed of the mob in meters per second.
@@ -24,7 +25,11 @@ func initialize(start_position, player_position):
 	
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 
-
+func squash():
+	emit_signal("squashed")
+	queue_free()
 
 func _on_VisibilityNotifier_screen_exited():
 	queue_free()
+
+
