@@ -26,6 +26,7 @@ MusicPlayer="*res://MusicPlayer.tscn"
 
 window/size/width=720
 window/size/height=540
+window/size/resizable=false
 
 [input]
 
